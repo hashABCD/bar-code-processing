@@ -14,6 +14,7 @@ def show_image(window_name, image_file):
 
 def read_barcode(barcodes_images):
     barcodes = decode(img)
+    print(len(barcodes))
     for b in barcodes:
         barcode_data = b.data.decode("utf-8")
         barcode_type = b.type
@@ -22,9 +23,9 @@ def read_barcode(barcodes_images):
 
 if __name__ == "__main__":
     #path to images
-    barcode_jpg = "images/barcode.jpg"       
+    barcode_jpg = "images/barcode_2.jpg"       
     barcode_png = "images/barcode_1.png"   
 
-    img = read_image(barcode_png)            #read image
+    img = read_image(barcode_jpg)            #read image
     show_image("Barcode", img)           #view image
     read_barcode(img)                    #read barcode data
